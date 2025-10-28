@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 import EcosystemPage from './pages/EcosystemPage';
+import TTFlowPage from './pages/TTFlowPage';
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,7 +11,7 @@ function Home() {
       <img src={logo} className="App-logo" alt="logo" />
       <h2 style={{ marginTop: 12 }}>Welcome</h2>
       <p>Edit <code>src/App.js</code> and save to reload.</p>
-      <p>Use the navigation to view the new Ecosystem diagram.</p>
+      <p>Use the navigation to view the diagrams.</p>
     </div>
   );
 }
@@ -45,6 +46,7 @@ export default function RouterApp() {
             <nav aria-label="Main">
               <ul style={{ display: 'flex', gap: 12, listStyle: 'none', margin: 0, padding: 0 }}>
                 <li><Link to="/ecosystem" className="App-link">Ecosystem</Link></li>
+                <li><Link to="/tt-digital-id-flow" className="App-link">TT Digital ID Flow</Link></li>
               </ul>
             </nav>
           </div>
@@ -61,6 +63,7 @@ export default function RouterApp() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ecosystem" element={<EcosystemPage />} />
+            <Route path="/tt-digital-id-flow" element={<TTFlowPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
